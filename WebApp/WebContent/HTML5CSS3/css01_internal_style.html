@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	스타일 표시 방법
+	inline 방식 : html tag에 style 속성으로 표기
+	internal 방식 : head tag에 style tag를 이용하여 표기
+	external 방식 : 스타일시트를 별도의 외부 파일로 생성 및 연결하여 사용
+	
+	** 같은 형식의 스타일을 동일페이지 또는 여러페이지에 적용 할 경우 external 방식 추천!
+ -->
+<style>
+	/* 스타일시트 주석문 */
+	/* 선택자 : 태그 선택자, 아이디 선택자, 클래스 선택자 */
+	/* 선택자{속성:값; 속성:값; 속성:값;...}	*/
+	/* 태그 선택자 -> 태그 선택자의 경우 모든 동일한 태그에 스타일이 적용됨 */
+	div{color:blue; background-color:#ddd;}
+	/* 아이디 선택자 -> 원하는 태그에 아이디를 지정하여 아이디 선택자로 스타일 표시 */
+	#txt{background-color:yellow;}
+	/* 클래스 선택자 -> 원하는 태그들을 묶어 공통된 스타일 적용이 가능. 태그에 클래스명 지정하여 적용 */
+	.c1{font-size:20pt; }
+	
+	#d1{
+		/* text-decoration : underline(밑줄), overline(윗줄), line-through(중간줄), none */
+		text-decoration:underline;
+	}
+</style>
+</head>
+<body>
+<h1 style="color:blue">스타일시트</h1>
+
+<ul>
+	<li>스타일 표시 방법</li>
+	<li class="c1">inline 방식 : html tag에 style 속성으로 표기</li>
+	<li id="txt">internal 방식 : head tag에 style tag를 이용하여 표기</li>
+	<li>external 방식 : 스타일시트를 별도의 외부 파일로 생성 및 연결하여 사용</li>
+	
+	<li>** 같은 형식의 스타일을 동일페이지 또는 여러페이지에 적용 할 경우 external 방식 추천</li>
+</ul>
+<div class="c1">
+	뉴욕증시에서 주요 지수는 <span id="d1">미국 국채금리 상승 부담</span> 속에 실업 지표도 악화하면서 하락했습니다.
+	
+	18일(미국시간) 뉴욕증권거래소(NYSE)에서 다우존스 30 산업평균지수는 전장보다 119.68포인트(0.38%) 하락한 31,493.34에 거래를 마쳤습니다.
+	스탠더드앤드푸어스(S&P) 500 지수는 전장보다 17.36포인트(0.44%) 내린 3,913.97에, 기술주 중심의 나스닥 지수는 100.14포인트(0.72%) 떨어진 13,865.36에 장을 마감했습니다.
+</div>
+<ul>
+	<li>스타일 표시 방법</li>
+	<li>inline 방식 : html tag에 style 속성으로 표기</li>
+	<li>internal 방식 : head tag에 style tag를 이용하여 표기</li>
+	<li>external 방식 : 스타일시트를 별도의 외부 파일로 생성 및 연결하여 사용</li>
+	
+	<li>** 같은 형식의 스타일을 동일페이지 또는 여러페이지에 적용 할 경우 external 방식 추천</li>
+</ul>
+<div>
+18일(현지시간) 미국 항공우주국(NASA)에 따르면 이날 퍼서비어런스가 화성의 고대 삼각주로 알려진 <span>'예제로 크레이터(Jezero Crater)'에 착륙</span>했다.
+이후 곧바로 화성에서의 생명체 흔적을 찾는 임무에 착수했다.
+NASA 제트추진연구소의 롭 매닝 수석연구원은 NASA의 자체 방송인 NASA TV에 출현해 "오늘의 성과는 우리 모두가 협력한다면 그 어떤 것도 해낼 수 있다는 점을 보여줬다"며 "과학적인 성과뿐만 아니라 우리 국가와 인류를 위해서라도 이런 일을 계속 해나가야 할 것"이라고 말했다.
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Map을 이용한 링크 걸기</h1>
+<img src="../img/jeju_map.jpg" usemap="#JejuMap"/>
+<!-- map 링크 걸기 -->
+<map name="JejuMap">
+	<!-- 사각형 모양으로 링크 걸기 -->
+	<!-- 링크 걸 위치 파악(x,y), 사각형의 왼쪽상단 모서리, 오른쪽 하단 모서리 -->
+	<!-- 링크 범위 모양 : rect, circle, pol -->
+	<!-- 					   x1,y1,x2,t2 -->
+	<area shape="rect" coords="193,127,295,170" href="https://www.airport.co.kr/jeju/index.do" title="제주공항으로 이동" target="_blank">
+	<!-- 원 모양으로 링크 걸기 -->
+	<!-- 원의 중심부 위치 파악(x,y) + 반지름 구하기 -->
+	<!-- 						  x,  y,  r -->
+	<area shape="circle" coords="340,270,30" href="https://www.jeju.go.kr/index.htm"/>
+	<!-- 다각형 모양으로 링크 걸기 -->
+	<!-- 다각형 각 모서리의 위치 파악(x,y), 시작점을 기준으로 한 쪽 방향으로 표시 -->
+	<area shape="pol" coords="80,210,125,240,88,280,32,265,20,220" href="../index.html"/>
+	
+</map>
+</body>
+</html>

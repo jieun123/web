@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/*
+ 	전체 폭 : 1200 / 메인(하얀색) 폭 : 1060 / 메인 높이 : 896 / 메인 왼쪽 : 165 / 메인 오른쪽 : 60
+	메인 상단 공백 높이 : 20 / 메인 하단 공백 높이 : 60 / 전체 상단,하단 공백 : 9, 6
+	위 이미지 : 167*334 (5번은 168*334) ==> 167*334
+	아래 이미지 : 167*105 (4번 166*105, 5번 168*105) ==> 167*105
+	왼쪽 가운데 이미지 : 165*72
+	게시판 이미지 : 375*34 / 376*34 ==> 375*34
+													하단 왼쪽 이미지(오시는길) : 375*83
+	하단 이미지 : 835*155
+	갤러리 작은 이미지 : 99*75 / 99*76 / 100*76 ==> 99*75
+	- 배경색 rgb(146,204,101)
+	- 메뉴색 rgb(99,187,39)
+*/
+body{margin:0;padding:0;background:rgb(146,204,101);overflow:auto;}
+ul, li{margin:0;padding:0;list-style-type:none;}
+#main{
+	width:1060px;height:896px;
+	margin:9px 0 0 70px;
+	border:1px solid red;
+	background:#fff;
+}
+/*메인 이미지 공간*/
+#main>div:first-child, #main>div:nth-child(4), #main>div:nth-child(5){
+	width:835px;
+	margin-left:165px;
+}
+/*메뉴 상단 이미지*/
+#main>div:first-child li{
+	float:left;
+}
+/*SiteMap*/
+#main>div:nth-of-type(2)>img{
+	width:165px;height:72px;
+	border:1px solid green;
+}
+/*중앙 메뉴*/
+#main>div:nth-child(3){
+	width:835px;
+	height:72px;
+	margin-left:165px;
+	background:rgb(99,187,39);
+	float:left;
+}
+#main>div:nth-child(3) li{
+	float:left;
+	width:20%;
+	text-align:center;
+	line-height:72px;
+	color:#fff;font-weight:900;
+}
+/*메뉴 하단 이미지*/
+#main>div:nth-child(4) li{
+	float:left;
+}
+/*게시판*/
+#main>div:nth-child(5) li{
+	float:left;
+	padding-right:50px;
+}
+/*게시판 글*/
+#main>div:nth-child(6){
+	width:375px;
+	margin-left:165px;
+}
+/*갤러리*/
+#main>div:nth-child(7){
+	width:375px;
+	height:185px;
+	margin-left:255px;
+}
+#main>div:nth-child(7) li{
+	float:left;
+	padding:5px;
+}
+#main>div:nth-child(7) img{
+	width:99px;height:75px;
+}
+/*하단*/
+#main>div>last-child{
+	margin-left:165px;
+}
+

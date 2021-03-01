@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list layout</title>
+<!--
+	600 x 516
+	tab2_1(세로) : 178 x 322
+	tab2_2(가로1) : 179 x 100
+	tab2_3(가로2) : 178 x 100
+	tab2_4(가로3) : 181 x 100
+	
+	칸 당 크기 : 179 x 152
+	 - 이미지 : 179 x 100
+	 - 텍스트 : 179 x 52
+	
+	간격 15 or 20
+	
+	4칸 -> 373 x 319
+-->
+<style>
+	#main{
+		width:1000px;
+		height:1000px;
+		margin:10px;
+		background:#fff;
+	}
+	.qna_box{
+		width:179px;
+		height:152px;
+		border:1px solid lightgray;
+		margin:10px;
+		float:left;
+		background:rgb(251,251,251);
+	}
+	
+	.pic{
+		width:179px;
+		height:100px;
+	}
+	.pic_text{
+		width:179px;
+		height:52px;
+	}
+	#tab1{
+		padding:10px;
+	}
+	#tabSet{
+		width:1000px;
+		height:200px;
+	}
+/* 	#qna{
+		width:1000px;
+		height:500px;	
+	} */
+/* 	#qna li{
+		float:left;
+		width:179px;
+		height:152px;
+		margin:10px;
+		border:1px solid lightgray;
+		background:rgb(251,251,251);
+	} */
+	
+	#tabSet li{
+		float:left;
+		width:179px;
+		height:152px;
+		margin:10px;
+		border:1px solid red;
+		background:#fff;
+	}
+	#tab_img{
+		border:1px solid lightgray;
+	}
+	.textLocation{
+		padding:20px 15px;
+	}
+	.textLocation2{
+		padding:5px 10px;
+	}
+	.text{
+		font-family:맑은 고딕;
+		font-size:12px;
+	}
+	.setFont_Q{
+		color:rgb(41,189,212);
+		font-weight:bold;
+	}
+	.setBold{
+		font-weight:900;
+		color:rgb(69,69,69);
+	}
+	.setColor{
+		color:rgb(116,116,116);
+	}
+	
+</style>
+</head>
+<body>
+<form>
+	<div id="main">
+		<div id="qna">
+		<ul type="none">
+			<div class="qna_box text">
+				<li class="textLocation">
+					<span class="setFont_Q">Q</span> <span class="setBold">헐리우드 영화에서 러시안인이 주로 악당으로 ...</span><br/><br/>
+					<span class="setBold">A</span> <span class="setColor">냉정시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</span>
+				</li>
+			</div>
+			<div class="qna_box text">
+				<li class="textLocation">
+					<span class="setFont_Q">Q</span> <span class="setBold">'독도' 이름의 유래를 알려주세요.</span><br/><br/>
+					<span class="setBold">A</span> <span class="setColor">독도와 관련된 명칭은 시대에 따라 문헌에 아주 다양하게 나옵니다. 조선...</span>
+				</li>
+			</div>
+			
+			
+			<div id="tab1">
+			<li>
+			<img src="tab2_1.png" id="tab_img"/>
+			</li>
+			</div>
+			
+			
+			<div class="qna_box text">
+				<li class="textLocation">
+					<span class="setFont_Q">Q</span> <span class="setBold">매실청은 당뇨환자에게 해로운가요?</span><br/><br/>
+					<span class="setBold">A</span> <span class="setColor">매실청은 설탕으로 매실을 발효시킨 식품으로 당분이 많이 함유되어 있습니...</span>
+				</li>
+			</div>
+			<div class="qna_box text">
+				<li class="textLocation">
+					<span class="setFont_Q">Q</span> <span class="setBold">108배가 다이어트에 도움이 되나요?</span><br/><br/>
+					<span class="setBold">A</span> <span class="setColor">108배를 하면 땀도 굉장이 많이 나고 전신운동이 되기 때문에 운동 효...</span>
+				</li>
+			</div>
+		</ul>	
+		</div>
+<!-- 	 	<div id="tab1">
+			<img src="tab2_1.png" id="tab_img"/>
+		</div> -->
+		<div id="tabSet">
+			<ul type="none">
+				<li class="img_box">
+					<img src="tab2_2.png" class="pic"/>
+					<div class="pic_text text textLocation2"><b class="setBold">견과류의 하루 적정 섭취량</b><br/>견과류</div>
+				</li>
+				<li class="img_box">
+					<img src="tab2_3.png" class="pic"/>
+					<div class="pic_text text textLocation2"><b class="setBold">날벌레가 빛에 몰려드는 이유</b><br/>곤충</div>
+				</li>
+				<li class="img_box">
+					<img src="tab2_4.png" class="pic"/>
+					<div class="pic_text text textLocation2"><b class="setBold">냉면의 유래와 역사</b><br/>음식</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</form>
+</body>
+</html>

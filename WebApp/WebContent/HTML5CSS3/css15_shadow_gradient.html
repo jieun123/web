@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:500px; height:100px; margin:50px; font-size:3em;
+		border:1px solid gray; text-align:center; line-height:100px;
+	}
+	
+	/*박스에 그림자 설정*/
+	div:first-child{
+		/*		왼쪽,오른쪽	   위,아래   투명도   그림자색상 */
+		box-shadow:-5px		5px		5px		red;
+		/* 양수:오른쪽,아래	음수:왼쪽,위 */
+	}
+	/*글자에 그림자 설정*/
+	div:nth-of-type(2){
+		text-shadow:5px 5px 5px blue;
+	}
+	
+	/*배경 그라데이션*/
+	div:last-child{
+		width:100%; height:700px; font-size:1em; line-height:1.2;
+		
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#efeed7+0,ededaa+17,6ab7a5+33,60bcaa+47,40c4c4+59,44c5c9+71,3e77c1+84,7c46f2+100 */
+		background: #efeed7; /* Old browsers */
+		background: -moz-linear-gradient(top,  #efeed7 0%, #ededaa 17%, #6ab7a5 33%, #60bcaa 47%, #40c4c4 59%, #44c5c9 71%, #3e77c1 84%, #7c46f2 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #efeed7 0%,#ededaa 17%,#6ab7a5 33%,#60bcaa 47%,#40c4c4 59%,#44c5c9 71%,#3e77c1 84%,#7c46f2 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #efeed7 0%,#ededaa 17%,#6ab7a5 33%,#60bcaa 47%,#40c4c4 59%,#44c5c9 71%,#3e77c1 84%,#7c46f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efeed7', endColorstr='#7c46f2',GradientType=0 ); /* IE6-9 */
+	}
+	
+	
+</style>
+</head>
+<body>
+<div>
+	박스에 그림자 설정
+</div>
+<div>
+	글자에 그림자 설정
+</div>
+<div>
+	2월 24일 수요일, 오늘의 날씨는 전국이 가끔 구름많고 기온은 어제와 비슷해 아침최저 -9~2도(서울 -4도)로 출근길 영하권 추위가 이어진다. 낮최고기온도 5~12도(서울 9도)로 일교차가 크겠다. 미세먼지는 전 권역 ‘좋음~보통’이다.
+	2월 24일 수요일, 오늘의 날씨는 전국이 가끔 구름많고 기온은 어제와 비슷해 아침최저 -9~2도(서울 -4도)로 출근길 영하권 추위가 이어진다. 낮최고기온도 5~12도(서울 9도)로 일교차가 크겠다. 미세먼지는 전 권역 ‘좋음~보통’이다.
+
+	2월 24일 수요일, 오늘의 날씨는 전국이 가끔 구름많고 기온은 어제와 비슷해 아침최저 -9~2도(서울 -4도)로 출근길 영하권 추위가 이어진다. 낮최고기온도 5~12도(서울 9도)로 일교차가 크겠다. 미세먼지는 전 권역 ‘좋음~보통’이다.
+	2월 24일 수요일, 오늘의 날씨는 전국이 가끔 구름많고 기온은 어제와 비슷해 아침최저 -9~2도(서울 -4도)로 출근길 영하권 추위가 이어진다. 낮최고기온도 5~12도(서울 9도)로 일교차가 크겠다. 미세먼지는 전 권역 ‘좋음~보통’이다.
+</div>
+</body>
+</html>

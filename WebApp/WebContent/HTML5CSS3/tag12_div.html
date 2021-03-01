@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{width:200px;height:200px;border:1px solid gray;}
+	#d1{background:green;z-index:100;position:relative;}
+	/*
+		position : 좌표 설정(left, top, right, bottom)
+		속성 값 : static(생략, 좌표 설정 불가)
+				relative(좌표 설정 가능, 공간을 차지하고 있다,,?)
+				absolute(좌표 설정 가능, 공간을 뺀다..?)
+				
+		z-index : 양수를 설정하면 값이 높을수록 위에 표시됨
+	*/
+	#d2{
+		position:absolute;
+		left:100px; top:100px;
+	}
+	#d4{
+		background:pink;width:80px;height:80px;
+		position:absolute;
+		left:100px; top:100px;
+	}
+	#d3{
+		background-color:#ddd;
+		position:relative;
+		top:50px;
+		z-index:10;
+	}
+	#d5{
+		width:100px; height:100px;
+		background-color:lightblue;
+		position:absolute;
+		left:30px;top:30px;
+	}
+	#d6{
+		position:absolute;
+		width:100px;
+		height:200pax;
+		border:1px solid gray;
+		background-color:yellow;
+		right:10px;
+	}
+</style>
+</head>
+<body>
+<div id="d1">aaaaa</div>
+<div id="d2">
+	bbbbb
+	<div id="d4">4444444</div>	<!-- #d2의 position이 static으로 되면, 의존할 absolute가 없으므로 상위 absolute인 #d1를 기준으로 위치가 변경됨,,? -->
+</div>
+<div id="d3">
+	ccccc
+	<div id="d5">5555555</div>
+</div>
+<div id="d6"></div>
+</body>
+</html>

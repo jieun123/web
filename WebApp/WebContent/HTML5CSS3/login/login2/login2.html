@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 폼</title>
+<link rel="stylesheet" href="login2.css" type="text/css"/>
+</head>
+<body>
+<div id="main">
+	<!-- 로고 -->
+	<div id="top_logo">
+		<a href="https://www.daum.net"><img src="../daum.PNG"/></a>
+	</div>
+	<!-- 로그인폼, 배너 -->
+	<div id="login_form">
+		<div id="login">
+			<form method="post" action="login.jsp">
+				<!-- 하나의 컴퍼넌트에 여러 클래스를 적용할 수 있음 (id는 하나만 지정 가능)-->
+				<input type="text" class="form_input form" name="userid" placeholder="아이디 입력"/>
+				<input type="password" class="form_input form" name="userpwd" placeholder="비밀번호 입력"/>
+				<input type="submit" class="form_com form sub" value="로그인"/>
+				<div id="state">
+					<span>
+						<input type="checkbox" name="logState" value="no"/>로그인 상태 유지
+					</span>
+					<span style="float:right">
+						<a href="#">보안</a> 
+						<a href="#">ON</a>
+					</span>
+				</div>
+				<div id="check">
+					<a href="#">아이디 찾기</a> | 
+					<a href="#">비밀번호 찾기</a>
+				</div>
+			</form>
+		</div>
+		<a href="#"><img src="../ad.PNG" id="banner"/></a>
+	</div>
+	<div id="bottom">
+		copyright
+	</div>
+</div>
+</body>
+</html>

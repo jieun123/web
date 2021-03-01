@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		background-color : 배경색
+	*/
+	body{
+		/*
+		background-color:#ddd;
+		background-image:url(../img/img1.png);
+		background-repeat:no-repeat;
+		background-position:right top;
+		background-attachment:fixed;
+		background-size:300px 300px;
+		*/
+		/* 스타일시트의 그룹화 : 같은 속성명들을 묶어 그룹화 */
+		background:url(../img/img1.png) no-repeat fixed right top;
+		
+	}
+	div{
+		background-color:#fff;
+		width:50%;
+		opacity:0.8; /* 투명도 설정 : 0~1 */
+	}
+
+	
+</style>
+</head>
+<body>
+<h1>background 속성</h1>
+<div>
+	<ul>
+		<li>background-color : 배경을 단색으로 설정 -> 색상명, rgb코드</li>
+		<!-- #ff00cc = #f0c -->
+		<li>background-image : 배경을 이미지로 설정 -> url(이미지 파일명)</li>
+		<li>background-repeat : 배경 이미지 반복 여부 설정 -> no-repeat, repeat-x(가로방향반복), repeat-y(세로방향반복)
+		<li>background-position : 배경이미지의 위치 설정 -> left, center, right, top, middle, bottom, %
+		<li>background-attachment : 배경이미지 고정 설정 -> fixed, scroll
+		<li>background-size : 배경이미지 크기 설정</li>
+	</ul>
+	
+	<img src="../img/d1.jfif"/><br/>
+	<img src="../img/d2.jfif"/><br/>
+	<img src="../img/d3.jfif"/><br/>
+	<img src="../img/d4.jfif"/><br/>
+	<img src="../img/d5.jfif"/><br/>
+	<img src="../img/d6.jfif"/><br/>
+	
+</div>
+</body>
+</html>

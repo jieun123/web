@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>표 만들기</h1>
+<pre>
+태그
+table : 표의 시작
+tr : 줄 생성
+td : 칸 생성
+th : 글자 가운데 정렬+진하게 (강조하고 싶은 줄에 td 대신 사용)
+
+colgroup, col : 열(컬럼) 그룹화
+				열 단위로 처리할 때 사용 (table tag 다음, 컬럼이 시작되기 전 기입)
+
+caption : 표의 제목 (어느 위치에 두어도 결과는 상단에 표출됨)
+
+thead : 표의 상단
+tbody : 표의 내용
+tfoot : 표의 하단
+
+
+속성
+width, height : px, 백분율(%)
+
+css : 디자인과 관련있는 기능을 구현
+사용방법
+1. html 시작 태그에 직접 기입
+style : 배경, 글씨의 색상, 이미지 등 설정("속성:값")
+	배경 색 : background-color:색상명 or RGB코드
+	배경 이미지 : background-img:url(이미지 경로)
+span : 열 묶음 (ex.2 -> 시작열부터 2열이 묶여 같은 환경으로 설정이 됨)
+
+</pre>
+
+<table border="1" width="100%" style="color:green">
+	<caption><h1>표의 제목</h1></caption>
+	<colgroup>
+		<col span="2" style="background-image:url(../img/icon.png)"/>
+		<col style="background:yellow"/>
+	</colgroup>
+	<thead>
+	<tr height="100" style="color:blue">
+		<th>첫번째 칸</th>
+		<th style="background-color:#ff0000">두번째 칸  #ff0000=red</th>
+		<th>두번째 칸</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>두번째 줄 첫번째 칸</td>
+		<td><img src="../img/img1.png" width="100"/></td>
+		<td>두번째 줄 첫번째 칸</td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr>
+		<td>두번째 줄 첫번째 칸</td>
+		<td><img src="../img/img1.png" width="100"/></td>
+		<td>두번째 줄 첫번째 칸</td>
+	</tr>
+	</tfoot>
+</table>
+</body>
+</html>

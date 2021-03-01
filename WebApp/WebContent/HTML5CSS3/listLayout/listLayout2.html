@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list layout</title>
+<style>
+	#main{
+		width:600px;
+		height:516px;
+		margin:10px;
+		background:#fff;
+	}
+	.box{
+		width:179px;
+		height:152px;
+		border:1px solid lightgray;
+		margin:10px;
+		float:left;
+		background:rgb(251,251,251);
+	}
+	#tab1{
+		padding:10px;
+	}
+	#tab1_img{
+		border:1px solid lightgray;
+	}
+	#tabSet{
+		width:1000px;
+		height:200px;
+	}
+	#tabSet .box{
+		background:#fff;
+	}
+	.tap_img{
+		width:179px;
+		height:100px;
+	}
+	.tab_text{
+		width:179px;
+		height:52px;
+	}
+	.box>div{
+		padding:20px 15px;
+	}
+	.qna_text::first-letter{
+		color:rgb(41,189,212);
+		font-weight:bold;
+	}
+	.textLocation2{
+		padding:5px 10px;
+	}
+	.text{
+		font-family:맑은 고딕;
+		font-size:12px;
+	}
+	.setBold{
+		font-weight:900;
+		color:rgb(69,69,69);
+	}
+	
+	a:link{text-decoration:none;color:rgb(116,116,116)}
+	a:visited{text-decoration:none;color:rgb(116,116,116)}
+	a:hover{text-decoration:none;color:rgb(116,116,116)}
+	a:active{text-decoration:none;color:rgb(116,116,116)}
+	
+</style>
+</head>
+<body>
+<form>
+	<div id="main">
+		
+		<div class="box">
+			<ul>
+				<li>
+					<span class="setBold">Q 헐리우드 영화에서 러시안인이 주로 악당으로 ...</span><br/><br/>
+					<span class="setBold">A</span> 냉정시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...
+					</div></a>
+				</li>
+				<li>
+					<span class="setBold">Q '독도' 이름의 유래를 알려주세요.</span><br/><br/>
+					<span class="setBold">A</span> 독도와 관련된 명칭은 시대에 따라 문헌에 아주 다양하게 나옵니다. 조선...
+					</div></a>
+				</li>
+				<li>
+					<span class="setBold">Q 매실청은 당뇨환자에게 해로운가요?</span><br/><br/>
+					<span class="setBold">A</span> 매실청은 설탕으로 매실을 발효시킨 식품으로 당분이 많이 함유되어 있습니...
+					</div></a>
+				</li>
+				<li>
+					<span class="setBold">Q 108배가 다이어트에 도움이 되나요?</span><br/><br/>
+					<span class="setBold">A</span> 108배를 하면 땀도 굉장이 많이 나고 전신운동이 되기 때문에 운동 효...
+					</div></a>
+				</li>
+			</ul>
+		</div>
+		
+	 	<div id="tab1">
+			<a href="#"><img src="img/tab2_1.png" id="tab1_img"/></a>
+		</div>
+		<div id="tabSet">
+			<a href="#"><div class="box">
+				<img src="img/tab2_2.png" class="tap_img"/>
+				<div class="tab_text text">
+					<div class="textLocation2"><b class="setBold">견과류의 하루 적정 섭취량</b><br/>견과류</div>
+				</div>
+			</div></a>
+			<a href="#"><div class="box">
+				<img src="img/tab2_3.png" class="tap_img"/>
+				<div class="tab_text text">
+					<div class="textLocation2"><b class="setBold">날벌레가 빛에 몰려드는 이유</b><br/>곤충</div>
+				</div>
+			</div></a>
+			<a href="#"><div class="box">
+				<img src="img/tab2_4.png" class="tap_img"/>
+				<div class="tab_text text">
+					<div class="textLocation2"><b class="setBold">냉면의 유래와 역사</b><br/>음식</div>
+				</div>
+			</div></a>
+		</div>
+	</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* Reset */
+body, h1, h2, h3, h4, ul, ol, dl, li, dt, dd, p{margin: 0;padding: 0;}
+li{list-style: none;}
+body{
+    width: 100%;
+    height: 100%;    
+}
+/*class*/
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.fontBold{
+    width: 143px;
+    height: 50px;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    float: left;
+}
+.blueBold{
+    display: block;
+    width: 12px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 13px;
+    color: rgb(41,188,211);
+    float: left;
+}
+.fontInherit{
+    width: 143px;
+    height: 60px;
+    display: block;
+    font-weight: inherit;
+    font-size: 11.5px;
+    float: left;
+    color: rgb(117,116,116);
+}
+.BlackBold{
+    display: block;
+    width: 12px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000;
+    float: left;
+}
+.subBold{
+    display: block;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    font-size: 11.5px;
+}
+.subInherit{
+    display: block;
+    padding: 0px 10px 5px 10px;
+    font-weight: inherit;
+    font-size: 11px;
+    color: rgb(117,116,116);
+}
+/*style*/
+#main{
+    width: 640px;
+    height: 700px;
+    margin: 6% auto 0;
+    background: #fff;
+}
+#main div ul{
+    height: 150px;
+}
+#main div ul li{
+    height: 130px;
+}
+#main div:first-child{
+    width: 396px;
+    height: 320px;
+}
+#main div:first-child ul:first-child{
+    margin-bottom: 20px;
+}
+#main div:first-child ul:first-child li{
+    margin-right: 20px;
+    width: 156px;
+    background: rgb(251,251,251);
+    border: 1px solid #ddd;
+    float: left;
+    padding: 20px 10px 0px 10px;
+}
+#main div:first-child ul:nth-child(2) li{
+    margin-right: 20px;
+    width: 156px;
+    background: rgb(251,251,251);
+    border: 1px solid #ddd;
+    float: left;
+    padding: 20px 10px 0px 10px;
+
+}
+#main div{
+    float: left;
+}
+#main div:nth-child(2){
+    width: 176px;
+    height: 320px;
+    background: url(../img/tab2_1.png) center no-repeat;
+    border: 1px solid #ddd;
+}
+#main div:last-child ul{
+    margin-top: 20px;
+    height: 150px;
+}
+#main div:last-child ul li{
+    width: 176px;
+    height: 150px;
+    border: 1px solid #ddd;
+    float: left;
+}
+#main div:last-child ul li:first-child{
+    margin-right: 20px;
+}
+#main div:last-child ul li:nth-child(2){
+    margin-right: 20px;
+}
+#main div:last-child ul li:first-child a{
+    display: block;
+    background: url(../img/tab2_2.png) center no-repeat;
+    width: 100%;
+    height: 100px;
+}
+#main div:last-child ul li:nth-child(2) a{
+    display: block;
+    background: url(../img/tab2_3.png) center no-repeat;
+    width: 100%;
+    height: 100px;
+}
+#main div:last-child ul li:last-child a{
+    display: block;
+    background: url(../img/tab2_4.png) center no-repeat;
+    width: 100%;
+    height: 100px;
+}

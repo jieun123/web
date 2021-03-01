@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>후손, 자손, 반응 선택자</title>
+<style>
+	/* 자손 선택자 */
+	div>ul{
+		background-color:lightyellow;
+	}
+	/* 후손 선택자 */
+	div h2{
+		color:blue;
+	}
+	/* 반응 선택자 */
+	div li:hover{		/* hover : 마우스 오버했을 때 */
+		background-color:lightblue;
+	}
+	div li:active{		/* active : 마우스 클릭했을 때 */
+		background-color:red;
+		color:white;
+	}
+
+</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li>자손, 후손 선택자 111</li>
+		<li>자손, 후손 선택자 222</li>
+		<li>자손, 후손 선택자 333</li>
+		<li>자손, 후손 선택자 444
+			<h2>// 반응선택자 //</h2>
+		</li>
+		<li>자손, 후손 선택자 555</li>
+	</ul>
+</div>	
+<ul>
+	<li>자손, 후손 선택자 111</li>
+	<li>자손, 후손 선택자 222</li>
+	<li>자손, 후손 선택자 333
+		<h2>~~ 반응선택자 ~~</h2>
+	</li>
+	<li>자손, 후손 선택자 444</li>
+	<li>자손, 후손 선택자 555</li>
+</ul>
+</body>
+</html>

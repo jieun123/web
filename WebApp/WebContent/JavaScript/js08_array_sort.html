@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{height:50px; border:1px solid gray;}
+</style>
+<script>
+	function arraySortTest(){
+		var numData = [25,45,84,1,25,48,25,10,3];
+		var stringData = ['orange','apple','banana','pineapple','strawberry','tomato','melon','manggo'];
+		document.getElementById("numData").innerHTML = "numData-->"+numData;
+		document.getElementById("stringData").innerHTML = "stringData-->"+stringData;
+		
+		//1.Ascending 정렬
+		//숫자 정렬
+		numData.sort(function(x,y){return x-y;});
+		document.getElementById("numAsc").innerHTML = "num Asc Sort-->" + numData;
+		//문자 정렬
+		stringData.sort();
+		document.getElementById("stringAsc").innerHTML = "string Asc Sort-->" + stringData;
+		
+		//2.Descending 정렬
+		//숫자 정렬
+		numData.sort(function(x,y){return y-x;});
+		document.getElementById("numDesc").innerHTML = "num Desc Sort-->" + numData;
+		//문자 정렬
+		//문자를 오름차순 정렬 후 뒤집어 내림차순으로 재정렬
+		stringData.reverse();
+		document.getElementById("stringDesc").innerHTML = "string Desc Sort-->" + stringData;
+		
+		/*
+			sort([compartFuncton]) : 배열 정렬 순서 정의 함수
+			파라미터가 생략되면 문자열로 취급되어 유니코드 값 순서대로 정렬됨
+			두 개의 파라미터를 입력받아 리턴 값이 0보다 작을 경우, a가 b보다 앞에 오도록 정렬(오름차순)
+								리턴 값이 0보다 클 경우, b가 a보다 앞에 오도록 정렬(내림차순)
+								리턴 값이 0일 경우, a와 b의 순서 변경하지 않음
+		*/
+		
+		
+		
+		
+	}
+	function aaa(){
+		
+	}
+	
+	
+</script>
+</head>
+<body onload="arraySortTest(); aaa();">
+<h1>배열의 정렬</h1>
+<div id="numData"></div>
+<div id="stringData"></div>
+<div id="numAsc"></div>
+<div id="stringAsc"></div>
+<div id="numDesc"></div>
+<div id="stringDesc"></div>
+</body>
+</html>

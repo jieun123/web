@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width:200px;height:200px;
+	}
+	/*
+		객체를 보여주거나 숨김
+		visibility : hidden(숨김), visible(보여줌)
+					  └> 숨김 처리된 객체의 자리는 차지하고 있음
+		display : none(숨김), block(보여줌)
+					└> 숨김 처리된 객체의 자리를 반환
+	*/
+	img:nth-of-type(2){
+		visibility:hidden;
+	}
+	img:nth-child(4){
+		display:none;
+	}
+	img:hover{
+		display:none;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+<img src="../img/d1.jfif"/>
+<img src="../img/d2.jfif"/>
+<img src="../img/d3.jfif"/>
+<img src="../img/d4.jfif"/>
+<img src="../img/d5.jfif"/>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* body, #main{margin:0;padding:0;} */
+	#main{width:360px;height:520px;border:1px solid gray;}
+	#main img, #calendar{width:350px;height:250px;}
+	#main div:first-child{margin-top:5px;}
+/* 	#main div:first-child img, #calendar{border:1px solid gray;} */
+	#calendar{text-align:center;}
+	#dayofweek th:first-child{color:red;}
+	#dayofweek th:last-child{color:blue}
+	#main div:nth-child(2){margin-top:-5px;}
+	
+</style>
+<script>
+	var now = new Date();	//현재 날짜, 시간
+
+	function setCalendar(){		
+		var year = now.getFullYear();	//년도
+		var month = now.getMonth()+1	//월 (3월로,, 나중에 +1로 수정)
+		var startDate = new Date(now.getFullYear(), now.getMonth(), 0);	//1일
+		var lastDate = new Date(now.getFullYear(), now.getMonth()+1, 0);	//마지막 날짜
+		
+		var setCal = document.getElementById("calendar");
+		document.getElementById("yearMonth").innerHTML = year+"년 "+month+"월";
+		
+		
+		var row, cell = null;
+		row = setCal.insertRow();	//열 추가(날짜 출력 공간)
+		
+		var cnt = 0;
+		//공백 출력
+		for(var space=0; space<startDate.getDay(); space++){
+			cell = row.insertCell();	//공백 셀 추가
+			cnt = cnt + 1;
+		}
+		//날짜 출력
+		for(var i=1; i<=lastDate.getDate(); i++){
+			cell = row.insertCell();
+			cell.innerHTML = i;
+			cnt = cnt + 1;
+			if(cnt%7 == 1){		//일요일
+				cell.innerHTML = "<font color=red>"+i
+			}
+			if(cnt%7 == 0){		//토요일
+				cell.innerHTML = "<font color=blue>"+i
+				row = setCal.insertRow();
+			}
+			if(now.getDate()==i){
+				cell.bgColor = "#cde3f3";	
+			}
+		}
+	}	
+</script>
+</head>
+<body onload="setCalendar()">
+<div id="main" align="center">
+	<div>
+		<img src="img1.PNG"/>
+	</div>
+	<div>
+		<table id="calendar">
+			<tr>
+				<th colspan="7" id="yearMonth"></th>
+			</tr>
+			<tr id="dayofweek">	<!-- 요일 -->
+				<th>일</th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+				<th>토</th>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>

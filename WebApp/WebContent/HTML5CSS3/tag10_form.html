@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Form Tag : 사용자가 정보를 입력 또는 선택할 수 있는 폼 만들기</h1>
+<!-- 
+	method
+		- get 방식 전송 : 주소 표시줄에 데이터가 표시
+		- post 방식 전송 : 데이터를 숨겨서 전송
+	
+	action : 보내기 기능 / html과 같은 프로젝트에 jsp 파일 생성 (WebContent 폴더) ,,,다시보기!
+	action 속성에 특정 데이터의 값을 명시하면 해당 데이터만 get 방식으로 전송됨(주소표시줄에 표시)
+ 	
+ 	enctype : 파일 업로드 시 필요 ,,? multipart/form-data ..?
+ 	
+ 	** form tag or submit 기능을 하는 tag에 입력하여 구현 가능
+ -->
+<!-- <form method="post" action="member.jsp?username='홍길동'" enctype="nultipart/form-data"> -->
+<form>
+	<!-- 
+		input : 아이디, 비밀번호, checkbox, radiobutton, button 등
+		selelct, option
+		textarea
+		
+		name : 변수를 선언하는 속성
+		value : 값
+		placeholder : 입력상자 안내메시지
+		size : 문자 수로 폭 설정
+		maxlength : 최대 입력 문자 수
+		checked : 버튼의 기본 값
+		selected : 목록 태그의 기본 선택 값
+		size : 목록 태그에서 한 번에 몇 개의 목록이 보이도록 설정
+		multiple : 여러 개의 항목 선택 가능, 선택된 정보는 배열로 묶임	
+	 -->
+ 	아이디 : <input type="text" name="userid" placeholder="아이디를 입력하세요" size="10" maxlength="5"/><br/>
+	비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호를 입력하세요"/><br/>
+	파일첨부 : <input type="file" name="filename"/><br/>
+	체크박스 : <input type="checkbox" name="hobby" value="등산"/> 등산
+			<input type="checkbox" name="hobby" value="농구" checked/> 농구
+			<input type="checkbox" name="hobby" value="배구"/> 배구<br/>
+			<!-- 같은 name의 선택된 정보들은 배열로 묶임 -->
+	라디오버튼 : <input type="radio" name="gender" value="M" checked/> 남
+			  <input type="radio" name="gender" value="F"/> 여<br/>
+	여러 줄의 텍스트 : <textarea name="content" rows="5" cols="50">컨텐츠</textarea><br/>
+	목록 태그 : <select name="hobby2" size="3" multiple>
+				<!-- size : 한 번에 몇 개의 목록이 보이도록 설정 -->
+				<!-- multiple : 여러 개의 항목 선택 가능, 선택된 정보는 배열로 묶임 -->
+				<option value="독서">독서</option>
+				<option value="음악" selected>음악</option> <!-- selected : 기본 선택 값 -->
+				<option value="운동">운동</option>
+				<option value="등산">등산</option>		
+			 </select><br/>
+	목록 태그 : <select name="choice">
+				<optgroup label="프론트엔드">
+					<option value="html">html</option>
+					<option value="css">css</option>
+					<option value="javascript">javascript</option>
+				</optgroup>
+				<optgroup label="백엔드">
+					<option value="jsp">jsp</option>
+					<option value="servlet">servlet</option>
+			 	</optgroup>
+			 </select><br/>
+	버튼 : <input type="button" value="버튼"/>
+		  <input type="submit" value="보내기" formaction="member2.jsp" formmethod="post"
+		  										formtarget="_balnk" formtype="multipart/form-data"/>
+		  <input type="reset" value="다시쓰기"/> <!-- form내의 컴퍼넌트 초기화 -->
+		  <button>버튼</button>
+		  <input type="image" src="../img/img1.png" width="100"/>
+		  <!-- type="submit", <button>, type="image" => 같은 기능 구현(submit) -->
+	<hr/>
+	<!-- 날짜, 색상, 숫자 처리 -->
+	date : <input type="date" name="date1"/>날짜(년,월,일)<br/>
+	datetime-local : <input type="datetime-local" name="date2"/>날짜(년,월,일)+시간(시,분)<br/>
+	month : <input type="month" name="date3"/>날짜(년,월)<br/>
+	week : <input type="week" name="date4"/>연도의 몇 번째 주인지 확인<br/>
+	color : <input type="color" name="color"/>RGB코드표<br/>
+	number : <input type="number" name="number" min="1" max="10" step="3"/>숫자 입력 또는 화살표로 선택, min/max:범위 지정 가능, step:증가값 설정<br/>
+	range : <input type="range" name="range" min="1" max="100" value="10"/><br/>
+</form>
+</body>
+</html>

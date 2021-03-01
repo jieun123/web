@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Audio Tag</h1>
+	<!-- 
+		controls : 컨트롤 표시(재생, 중지 버튼 등) -> 값 없이 속성명만 입력
+		autoplay : 자동 재생
+		loop : 반복횟수(횟수 생략시 무한 반복)
+		preload : 전송이 완료된 후 재생 -> 값 없이 속성명만 입력	
+	 -->
+	<audio src="../audio_movie/Kalimba.mp3" controls autoplay loop="2"></audio>
+	
+	<audio controls preload>
+		<source src="../audio_movie/Kalimba.mp3" type="audio/mp3"/>
+		<source src="../audio_movie/Kalimba.ogg" type="audio/ogg"/>
+	</audio>
+</body>
+</html>

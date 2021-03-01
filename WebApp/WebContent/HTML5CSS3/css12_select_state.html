@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		상태 선택자 : ...?????
+		
+		focus → 커서가 컴퍼넌트 들어오면
+		checked → 컴퍼넌트가 체크되면
+		enabled → 활성화일 때
+		
+		disabled → 비활성화 (value 화면에만 보일 뿐, 서버로 데이터를 보낼 수 없음)
+		readonly → 읽기전용 (서버로 데이터를 보낼 수 있음)
+			└> disabled, readonly : 주로 회원정보 수정 시 아이디, 이름 데이터는 보이지만 수정 불가하도록 설정할 때 사용
+	*/
+	input:focus{
+		background-color:yellow;
+	}
+	input:checked{
+		width:50px; height:50px;
+	}
+	textarea:disabled{
+		color:red;font-size:1.5em;
+	}
+	input:enabled{			/*readonly, enabled ---> 찾아보기,,,*/
+		background-color:blue;color:#fff;
+	}
+	
+
+</style>
+
+
+</head>
+<body>
+<form method="post"action="bbb.jsp">
+ 	아이디 : <input type="text" name="userid" placeholder="아이디를 입력하세요"
+ 					size="10" maxlength="5" value="goguma" disabled/><br/>
+	비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호를 입력하세요"/><br/>
+	파일첨부 : <input type="file" name="filename"/><br/>
+	체크박스 : <input type="checkbox" name="hobby" value="등산"/> 등산
+			<input type="checkbox" name="hobby" value="농구" checked/> 농구
+			<input type="checkbox" name="hobby" value="배구"/> 배구<br/>
+			<!-- 같은 name의 선택된 정보들은 배열로 묶임 -->
+	라디오버튼 : <input type="radio" name="gender" value="M" checked/> 남
+			  <input type="radio" name="gender" value="F"/> 여<br/>
+	여러 줄의 텍스트 : <textarea name="content" rows="5" cols="50" disabled>컨텐츠</textarea><br/>
+	목록 태그 : <select name="hobby2" size="3" multiple>
+				<!-- size : 한 번에 몇 개의 목록이 보이도록 설정 -->
+				<!-- multiple : 여러 개의 항목 선택 가능, 선택된 정보는 배열로 묶임 -->
+				<option value="독서">독서</option>
+				<option value="음악" selected>음악</option> <!-- selected : 기본 선택 값 -->
+				<option value="운동">운동</option>
+				<option value="등산">등산</option>		
+			 </select><br/>
+	<input type="button" value="버튼"/>
+</form>
+</body>
+</html>

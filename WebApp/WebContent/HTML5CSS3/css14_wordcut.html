@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:300px;
+		height:85px;
+		border:1px solid gray;
+	}
+	/* 한 줄에 대한 말줄임 */
+	div:first-child{
+		white-space:nowrap;		/* 출바꿈 없음 */
+		overflow:hidden;		/* 오버플로우 된 문자열 숨기기 */
+		text-overflow:ellipsis; /* 말줄임표(...) */
+	}
+	/* 여러 줄에 대한 말줄임 */
+	div:last-child{
+		text-align:left;		/* 문자 왼쪽 정렬(왼쪽 정렬하지 않으면 말줄임표가 안보일 수 있음)*/
+		white-space:normal;		/* 뭘까 ,,? */
+		line-height:1.3;
+		height:5em;
+		overflow:hidden;
+		word-wrap:break-word;	/* 잘릴 문자를 단어로 설정 */
+		display:-webkit-box;	/* 여백 삽입과 같이 유연한 높이 증가를 위한 플렉스 박스 형태로 변환 */
+		-webkit-line-clamp:4;	/* 보여줄 줄의 갯수 */
+		-webkit-box-orient:vertical;	/* vertical 박스의 방향 설정 */
+	}
+</style>
+</head>
+<body>
+<div>
+	뉴욕증시에서 주요 지수는 큰 변동성을 보인 끝에 혼조세로 마감했다.
+	미국 국채금리 상승에 대한 부담이 커졌지만, 제롬 파월 연방준비제도(Fed·연준) 의장이 완화적 통화정책 지속 의지를 강조하면서 불안감이 경감됐다.
+</div>
+<div>
+	뉴욕증시에서 주요 지수는 큰 변동성을 보인 끝에 혼조세로 마감했다.
+	미국 국채금리 상승에 대한 부담이 커졌지만, 제롬 파월 연방준비제도(Fed·연준) 의장이 완화적 통화정책 지속 의지를 강조하면서 불안감이 경감됐다.
+</div>
+</body>
+</html>

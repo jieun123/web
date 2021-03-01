@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		border:1px solid red;
+	}
+	ul{
+		/* 선의 모양 */
+		/* border-style:solid; -> 그룹화(상하좌우 동일한 모양으로 설정) */
+		/*
+		border-top-style:solid;
+		border-right-style:dashed;
+		border-bottom-style:dotted;
+		border-left-style:double;
+		*/
+		/* border-style:solid dashed dotted double; -> 그룹화(상하좌우 다른 모양으로 설정, 순서:시계방향) */
+		border-style:solid double; /* -> 상하좌우 다 지정하지 않았을 때, 비어있는 곳의 선의 모양은 반대편과 동일하게 설정됨(상-하, 좌-우) */
+		
+		/* 선의 두께 */
+		/*
+		border-top-width:5px;
+		border-right-width:10px;
+		border-bottom-width:15px;
+		border-left-width:20px;
+		*/
+		border-width:2px 4px 6px 8px;
+		
+		/* 선의 색상 */
+		/*
+		border-top-color:red;
+		border-bottom-color:green;
+		*/
+		border-color:red green blue;
+		
+		border:solid 10px green; /* 선의 모양, 두께, 색상 그룹화 */
+	}
+	
+	img{
+		border:1px solid gray;
+		border-radius:50px 50px; /* 둥근 모서리 */
+	}
+</style>
+</head>
+<body>
+<h1>border 속성 : 선의 색상, 두께, 모양 설정</h1>
+<ul>
+	<li>border-style : 선의 모양(solid:실선, dotted:점선, double:이중선, dashed, none, groove(홈), inset(볼록선))</li>
+	<li>border-width : 선의 두께(px)</li>
+	<li>border-color : 선의 색상(색상명, rgb코드)</li>
+</ul>
+<div>
+	<ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JAVASCRIPT</li>
+	</ul>
+</div>
+<img src="../img/d1.jfif"/>
+</body>
+</html>

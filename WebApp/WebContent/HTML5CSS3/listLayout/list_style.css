@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* 	
+	600 x 516
+	tab2_1(세로) : 178 x 322
+	tab2_2(가로1) : 179 x 100
+	tab2_3(가로2) : 178 x 100
+	tab2_4(가로3) : 181 x 100
+	
+	칸 당 크기 : 179 x 152
+	 - 이미지 : 179 x 100
+	 - 텍스트 : 179 x 52
+	
+	간격 15 or 20
+	
+	4칸 -> 373 x 319
+ */
+
+body, ul{margin:0;padding:0;}
+section>article>ul{list-style-type:none;}
+
+article li{		/*QNA, 포스트 box 설정*/
+	width:179px;height:152px;
+	float:left;
+	margin:10px;
+	border:1px solid lightgray;
+	font-size:12px;
+	/* font-family:맑은 고딕; */
+}
+
+article:first-child{
+	width:410px;height:350px;
+}
+article:first-child li{		/*QNA 배경색*/
+	background:rgb(251,251,251);
+}
+article:first-child li p:first-child{	/*QNA 질문 글씨 굵기*/
+	color:rgb(69,69,69);font-weight:bold;
+}
+article:first-child li p:last-child{	/*QNA 질문 글씨 굵기*/
+	color:rgb(117,116,116);
+}
+article:first-child li p:first-child::first-letter{	/*QNA->'Q' 색상 변경*/
+	color:rgb(41,189,212);font-weight:bold;
+}
+article:first-child li p:last-child::first-letter{	/*QNA->'A' 색상 변경*/
+	color:rgb(69,69,69);font-weight:bold;
+}
+article:first-child li p{	/*QNA 폰트 설정*/
+	padding:10px;
+	margin:5px;
+	text-height:152px;
+}
+
+/*세로 이미지 설정*/
+article{float:left;}
+article:nth-child(2){
+	margin-top:10px;
+	width:179px;height:325px;
+	border:1px solid lightgray;
+}
+article:nth-child(2) img{
+	width:179px;height:325px;
+}
+
+article:last-child img{	/*포스트 이미지*/
+	width:179px;height:100px;
+}
+article:last-child li{	/*포스트 테두리*/
+	border:1px solid lightgray;
+}
+article:last-child li span{	/*포스트 폰트 설정*/
+	padding:10px;
+	text-height:52px;
+	line-height:1.7;
+}
+article:last-child li span:first-of-type{	/*포스트 제목 폰트 설정*/
+	color:rgb(38,38,38);font-weight:bold;
+}
+article:last-child li span:last-child{		/*포스트 항목 폰트 설정*/
+	color:rgb(149,149,149);
+}
+
+
+/* a:link{text-decoration:none;color:rgb()}
+a:visited{text-decoration:none;color:rgb()}
+a:hover{text-decoration:none;color:rgb()}
+a:active{text-decoration:none;color:rgb()} */
+

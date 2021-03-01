@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<style>
+	body{}
+	#menu{overflow:auto;}	/* 해당 범위안에서만 설정 유지 ...? 다시 확인! */
+	
+	body, ul, li{
+		margin:0px;
+		padding:0px;
+		/*list-style-position:inside;*/
+		list-style-type:none;
+	}
+	
+	/* 후손 선택자 */
+	#menu li{
+		float:left;	/* box 정렬 순서 (right, left) */
+		width:25%;
+		text-align:center;	/* 컨텐츠 정렬 (right, center, left) */
+		font-size:2em;
+		height:100px;
+		line-height:100px; /* 텍스트 1줄 높이 설정 */
+		border-bottom:2px solid gray;
+		background-color:ivory;
+	}
+	#menu2 li{
+	background-color:lightblue;
+	height:50px;
+	text-align:center;
+	width:150px;
+	line-height:50px;
+	}
+</style>
+</head>
+<body>
+<ul id="menu">
+	<li><a href="#">메일</a></li>
+	<li><a href="#">뉴스</a></li>
+	<li><a href="#">판</a></li>
+	<li><a href="#">TV</a></li>
+</ul>
+<ul id="menu2">
+	<li><a href="#">메일</a></li>
+	<li><a href="#">뉴스</a></li>
+	<li><a href="#">판</a></li>
+	<li><a href="#">TV</a></li>
+</ul>
+</body>
+</html>

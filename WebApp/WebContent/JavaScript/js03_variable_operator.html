@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//계산가능
+	//연산자 : + - */ % > < >= <= != == += -= ++ -- && || ,,,
+	//명령어 : if문, if~else문, for, while, switch, do-while, break, continue
+	
+	var str = 'hong';	//"hong" or 'hong' ("", '' 둘 다 허용)
+	var n = 1234;
+	var n2 = 12.23;
+	//대입되는 데이터에 의해 데이터타입이 결정됨
+	
+	//함수정의
+	//함수 호출 시 실행 (페이지 로딩시에는 실행하지 않음)
+	function gugudan(){		//구구단 함수
+		var dan = document.getElementById('num').value;		//text에 입력 값을 변수 dan에 대입
+		var r = "";
+		for(var i=2; i<=9; i++){
+			r += dan+"*"+i+"="+(dan*i)+"<br/>";
+		}
+		document.getElementById("result").innerHTML=r;
+		document.getElementById("num").value="";	//text의 값을 공백으로 변경
+	}
+	function plus(){
+		//문자를 숫자로 바꾸기	Integer.parseInt()	Double.parseDouble()
+		var n1 = parseInt(document.getElementById("num").value);
+		var n2 = parseInt(document.getElementById("num2").value);
+		
+		var result = n1 + n2;
+		document.getElementById("result").innerHTML = result;
+	}
+	function imageChange(){
+		document.getElementById("i").src="../img/d5.jfif";
+	}
+	function imageChange2(){
+		document.getElementById("i").src="../img/d1.jfif";
+	}
+	function welcome(){		//생성한 함수가 자동으로 실행되길 원할 경우, 함수 생성 후 바로 호출하면 됨
+		alert("홈페이지에 오신 것을 환영합니다");
+	}
+	/* welcome();	//함수 호출 */
+	
+	
+</script>
+</head>
+<body onload="welcome()">	<!-- onload:사용자가 접속 시 실행 ,,? -->
+수 : <input type="text" id="num"/>
+수 : <input type="text" id="num2"/>
+<!-- 			html 부분				자바스크립트 부분(이벤트) -->
+<input type="button" value="구구단" onclick="gugudan()"/>
+<input type="button" value="더하기" onclick="plus()"/>
+<div id="result"></div>
+<script>
+	/* document.getElementById("result").innerHTML=r; */
+	
+</script>
+<img src="../img/d1.jfif" id="i" onmouseover="imageChange()" onmouseout="imageChange2()"/>
+<img src="../img/d2.jfif" id="i" onmouseover="this.src='../img/d6.jfif'" onmouseout="this.src='../img/d2.jfif'"/>
+<!--
+	onclick :클릭했을 때
+	onmouseover : 마우스 오버했을 때
+	onmouseout : 마우스 아웃했을 때
+	
+	this : this가 있는 객체 ,,,? 다시 정리하기
+ -->
+</body>
+</html>

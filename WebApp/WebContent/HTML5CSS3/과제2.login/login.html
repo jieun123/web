@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<link rel="stylesheet" href="login_style.css" type="text/css"/>
+<style>
+	body{
+		background:white;
+		width:700px;
+		height:450px;
+	}
+	#logo{
+		height:70px;
+		border-bottom:1px solid lightgray;
+		text-align:center;
+		line-height:100px;
+	}
+	#main{
+		padding:50px 30px;
+		height:250px;
+		width:290px;
+	}
+	.login_input_id input{
+		width:280px;
+		height:35px;
+		font-size:15px;
+		font-famaily:맑은 고딕;
+	}
+	.login_input_pwd input{
+		width:280px;
+		height:35px;
+		margin-top:5px;
+		font-size:15px;
+		font-famaily:맑은 고딕;
+	}
+	.loginButton input{
+		width:290px;
+		height:35px;
+		margin-top:15px;
+		font-size:15px;
+		font-family:맑은 고딕;
+		background:rgb(77,135,239);
+		border:none;
+		color:white;
+		font-size:15px;
+	}
+	#menu li{
+		float:left;
+		list-style-type:none;
+		text-align:center;
+		font-weight:bold;
+		font-size:12px;
+		overflow:auto;
+		margin-top:15px;
+	}
+	#ad{
+		position:absolute;
+		left:420px;top:130px;
+	}
+	#check{
+		font-size:12px;
+	}
+	#security{
+		float:right;
+	}
+	#footer{
+		height:70px;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		border-top:1px solid lightgray;
+	}
+	#corp li{
+		float:left;
+		list-style-type:none;
+		text-align:center;
+		font-size:11px;
+	}	
+	
+</style>
+</head>
+<body>
+<div id="logo"><img src="daum.PNG"/></div>
+<div id="main">
+	<div class="login_input_id">
+		<input type="text" name="userid" placeholder="아이디 입력"/>
+	</div>
+	<div class="login_input_pwd">
+		<input type="password" name="userpwd" placeholder="비밀번호 입력"/>
+	</div>
+	<div class="loginButton">
+		<input type="submit" value="로그인" formmethod="post"/>
+	</div>
+		<div id=check>
+			<input type="checkbox" name="loggedIn" value="logged"/>로그인 상태 유지
+			<div id=security>IP보안 <b>OFF</b></div>
+		</div>
+		<ul id="menu">
+			<li><a href="#">아이디 찾기</a></li>
+			<li>　|　</li>
+			<li><a href="#">비밀번호 찾기</a></li>
+		</ul>
+	</div>
+	<div id="ad">
+		<img src="ad.PNG" width=230px height=190px/>
+	</div>
+</div>
+<div id="footer">
+	<ul id="corp">
+		<li><a href="#">© Kakao Corp.</a></li>
+		<li>　|　</li>
+		<li><a href="#">고객센터</a></li>
+	</ul>
+</div>
+</html>

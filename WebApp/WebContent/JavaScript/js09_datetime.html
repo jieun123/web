@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 객체</title>
+<script>
+	var dateTime = new Date();					//현재 날짜, 시간
+	var dateTime2 = new Date("2021.05.10");		//"2021/05/10"	"2021-05-10"
+	var dateTime3 = new Date(561418674564563);	//밀리초
+	
+	document.write("dateTime="+dateTime);
+	document.write("<br/>dateTime2="+dateTime2);
+	document.write("<br/>dateTime3="+dateTime3);
+	
+	/*
+		년 : getFullYear()
+		월 : getMonth() -> 1월=0, 2월=1,...
+		일 : getDate()
+		시 : getHours()
+		분 : getMinutes()
+		초 : getSeconds()
+		요일 : getDay() -> 일요일=0, 월요일=1, ... 토요일=6  (자바에선 일요일=1)
+	*/
+	
+	var timeTxt = dateTime.getFullYear()+"년 ";
+	timeTxt += (dateTime.getMonth()+1)+"월 ";
+	timeTxt += dateTime.getDate()+"일 ";
+	timeTxt += dateTime.getHours()+":" + dateTime.getMinutes()+":" + dateTime.getSeconds();
+	
+	document.write("<br/>", timeTxt);
+	document.write("<br/>요일->"+dateTime.getDay());
+	
+	//월의 마지막 날 구하기
+	//new Date(연, 월, 일)-> 연, 월+1, 0 -> 월+1=다음달, 0일=전 월의 마지막 날
+	var date = new Date(dateTime.getFullYear(), dateTime.getMonth()+1, 0);
+	document.write("<br/>마지막날 -> "+date.getDate())
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

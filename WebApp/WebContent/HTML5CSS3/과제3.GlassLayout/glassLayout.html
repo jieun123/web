@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>glass layout</title>
+<style>
+	img[src^=title]{
+		position:absolute;
+		z-index:10;
+	}
+	img[src*=s1]{
+		position:absolute;
+		left:317px;
+		top:20px;
+		z-index:10;
+	}
+	img[src*=s2]{
+		position:absolute;
+		left:470px;
+		top:60px;
+		z-index:10;
+	}
+	img[src*=s3]{
+		position:absolute;
+		left:370px;
+		top:120px;
+		z-index:20;
+	}
+</style>
+</head>
+<body>
+<div style=width:700px;height:550px;background:white;>
+	<img src="title_layer.gif"/>
+	<div style=width:700px;height:40px;background:rgb(239,137,154);/>
+	<div style=width:700px;height:22px;background:rgb(90,177,202);position:absolute;top:48px;/>
+	<img src="glass1.gif"/>
+	<img src="glass2.gif"/>
+	<img src="glass3.gif"/>
+</div>
+</body>
+</html>

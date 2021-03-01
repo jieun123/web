@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>@media 쿼리 : 반응형 스타일 지정하기</title>
+<!-- 장치에 맞게 픽셀 정보 조정 								0 ~ 10  -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+	ul,li{margin:0px;padding:0px;list-style-type:none;}
+	li{border:1px solid #ddd;margin:3px;padding:3px;width:48%;float:left;}
+
+	/*반응형 스타일 지정*/
+	/*all, screen, print, tv, projection ... */
+	@media all and (min-width:320px) and (max-width:600px){
+		li{
+			background-color:lightyellow;
+			color:rgb(69,69,69);
+		}	
+	}
+	@media all and (min-width:601px) and (max-width:800px){
+		li{
+			background-color:lightblue;
+			color:red;
+		}
+	}
+	@media all and (min-width:801px){	/*최대값 미설정->무한대*/
+		li{
+			background-color:navy;
+			color:#fff;
+		}
+	}
+</style>
+</head>
+<body>
+<ul>
+	<li>현대자동차가 전용 전기차 제품군 ‘아이오닉’ 첫 모델인 ‘아이오닉5’(사진)를 23일 공개했다. 미국 전기차 업체 테슬라가 장악한 세계 전기차 시장에 본격적으로 도전하는 첫 모델이다. 전용 전기차는 가솔린, 디젤 등 내연기관차로는 출시하지 않고 오직 전기차로만 내놓은 모델을 말한다.</li>
+	<li>현대차는 준중형 스포츠유틸리티차량(SUV)인 아이오닉5가 현대차 첫 차량 ‘포니’에서 디자인 영감을 받았다고 밝혔다. 직선이 곧게 뻗은 디자인과 널찍한 실내 공간으로 설계돼 운전자와 동승자의 공간 활용성이 편리하다는 평가가 나온다.</li>
+	<li>아이오닉5는 독자 개발한 전기차 플랫폼 ‘E-GMP’를 탑재하면서 1회 충전으로 최대 430km를 주행할 수 있다. 현대차그룹은 아이오닉5를 시작으로 올해 안에 기아, 제네시스에서도 전용 전기차 제품군을 출시한다.</li>
+	<li>아이오닉5 출시로 한국 자동차 업계도 글로벌 전기차 경쟁에 합류하게 됐다. 블룸버그 뉴에너지파이낸스는 2019년에 처음으로 200만 대를 넘어선 전기 승용차 판매 규모가 2025년 850만 대, 2030년 2600만 대, 2040년 5400만 대로 성장할 것으로 내다봤다.</li>
+	<li>현대자동차가 23일 온라인으로 최초 공개한 첫 전용 전기차 ‘아이오닉5’에는 ‘멋있고 쓸 만한 전기차를 만들겠다’는 현대차의 의지와 기술이 집약됐다.</li>
+	<li>현대차그룹이 독자 개발한 전기차 플랫폼(뼈대) ‘E-GMP’를 처음 적용하며 기존 전기차보다 충전 부분을 크게 개선했다. 18분 내 배터리의 80%를 채울 수 있는 초급속 충전(350kW 기준)이 가능하고, 5분 충전으로 100km를 갈 수 있다. 정지 상태에서 시속 100km까지 도달하는 시간을 뜻하는 제로백은 5.2초면 된다.</li>
+	<li>자동차 업계에서는 이달 국내에 출시한 테슬라 모델Y, 내년 출시될 폭스바겐 ID.4 등을 경쟁 모델로 꼽고 있다.</li>
+</ul>
+</body>
+</html>

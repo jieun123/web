@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font 스타일</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style>
+	@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+	
+	pre{
+		font-size:1em;
+		font-family:궁서체;
+		font-weight:bold;
+	}
+	/*
+		구글 글꼴 사용하기(무료 웹폰트)
+		https://fonts.google.com
+		https://fonts.google.com/earlyaccess
+		1. title tag 안에 link tag 입력 후, 글꼴 설정
+		2. style tag 안에 url import 후, 글꼴 설정
+	*/
+	
+	#news{
+		font-family:'Sunflower', 굴림체;
+		font-size:20pt;
+	}
+	#news2{
+		font-family:Hanna;
+	}
+	
+</style>
+</head>
+<body>
+<h1>글꼴, 글자 크기 스타일</h1>
+<pre>
+	font-style
+		font-size : px, pt, cm, mm, in(inch),
+					em(1em-원래크기, 2em-원래크기의 2배, 0.5em-원래크기의 절반)
+		font-family : 글꼴
+					ex)font-famaily:돋움체, 굴림체, 궁서체,,, -> 지정한 폰트가 없을 경우 다음 지정 폰트로, 없을 경우 그 다음 지정 폰트로 설정
+		font-weight : normal, bold, 100, 200, 300,...
+</pre>
+<div id="news">
+	대한항공은 오는 27일 첫 무착륙 국제관광비행 상품을 운영한다고 19일 밝혔다.
+	이 비행 상품은 오전 10시 30분 인천공항에서 이륙해 강릉-동해안-부산-대한해협-제주 상공을 비행한 뒤 오후 1시 인천공항으로 되돌아오는 일정이다.
+	항공기는 A380(KE9021편)으로 운항한다. 대한민국 여권을 소지한 내국인만을 대상으로 판매한다.
+</div>
+<div id="news2">
+	대한항공은 오는 27일 첫 무착륙 국제관광비행 상품을 운영한다고 19일 밝혔다.
+	이 비행 상품은 오전 10시 30분 인천공항에서 이륙해 강릉-동해안-부산-대한해협-제주 상공을 비행한 뒤 오후 1시 인천공항으로 되돌아오는 일정이다.
+	항공기는 A380(KE9021편)으로 운항한다. 대한민국 여권을 소지한 내국인만을 대상으로 판매한다.
+</div>
+</body>
+</html>
