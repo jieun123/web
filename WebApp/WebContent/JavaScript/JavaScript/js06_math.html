@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function mathTest(){
+		var tag = "<ul>";
+		
+		var num = 123.5687;
+		
+		tag += "<li>PI=" + Math.PI + "</li>";				//원주율
+		tag += "<li>pow=" + Math.pow(5,3) + "</li>";		//ex) 5의3승
+		tag += "<li>round=" + Math.round(num) + "</li>";	//반올림
+		tag += "<li>sqrt=" + Math.sqrt(10) + "</li>";		//제곱근
+		tag += "<li>abs=" + Math.abs(-20) + "</li>";		//절대값
+		tag += "<li>ceil=" + Math.ceil(num) + "</li>";		//올림
+		tag += "<li>floor=" + Math.floor(num) + "</li>";	//내림(버림)
+		
+		tag += "<li>max=" + Math.max(58,69,15,26,874,685,278,45) + "</li>";		//최대값
+		tag += "<li>min=" + Math.min(58,69,15,26,874,685,278,45) + "</li>";		//최소값
+		
+		//					정수화(난수*(큰수-작은수+1))+작은수 ,,?
+		tag += "<li>random=" + Math.random() + "</li>";		//무작위 숫자 반환
+		
+		
+		document.getElementById("view").innerHTML = tag+"</ul>";
+		
+	}
+	/*
+		min:최소값	max:최대값	random:무작위 숫자 반환	round:반올림	trunc:소수 제외, 정수 부분만 반환
+		ceil:올림		floor:내림	sin:sine 함수값	PI:원주율
+	*/
+</script>
+</head>
+<body onload="mathTest()">
+<div id="view"></div>
+</body>
+</html>

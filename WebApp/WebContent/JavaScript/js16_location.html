@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>location 내장 객체</h1>
+<script>
+	document.write("protocol-->", location.protocol);
+	document.write("<br/>hostname-->", location.hostname);
+	document.write("<br/>port-->", location.port);
+	document.write("<br/>host-->", location.host);	//hostname+port
+	
+	//location.href="../index.html";	//다른 페이지로 이동
+	//location.href="https://www.daum.net"
+
+	location.reload;	//새로고침
+	
+	/* function 함수이름(){				//일정 시간마다 새로고침 설정
+		setTimeout('location.reload()', 10000);
+	} */
+
+	
+</script>
+</body>
+</html>

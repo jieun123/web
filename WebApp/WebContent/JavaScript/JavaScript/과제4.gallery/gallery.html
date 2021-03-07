@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#main{
+		width:500px;
+		margin:0 auto;
+		background:lightblue;
+	}
+	#imgList>img{
+		width:100px;
+		height:100px;
+		float:left;
+	}
+	
+	
+</style>
+<script>
+/* 	var image = ['d1.jfif', 'n1.jfif', 'n2.jfif', 'k1.gif', 'n3.jfif', 'k2.gif', 'd4.jfif',
+			'n5.jfif', 'd5.jfif', 'k3.gif', 'n6.jfif', 'n7.jfif', 'd7.jfif', 'n8.jfif', 'd6.jfif']; */
+	var image = ['image01.jfif', 'image02.jfif', 'image03.jfif', 'image04.gif', 'image05.jfif', 'image06.gif', 'image07.jfif',
+			'image08.jfif', 'image09.jfif', 'image10.gif', 'image11.jfif', 'image12.jfif', 'image13.jfif', 'image14.jfif', 'image15.jfif'];
+	var tag="";
+ 	function printImg(){	//5*3=15개(1SET) 이미지 출력
+		for(var i=0; i<image.length; i++){
+			tag += "<img src='img/"+image[i]+"' onclick='selectImg(this.src)'/>";
+		}
+		document.getElementById("imgList").innerHTML = tag;
+	}
+	function setImg(){		//이미지 출력 반복
+		for(var i=0; i<=4; i++){
+			printImg();
+		}
+	}
+	
+	var start, end, imgName;
+	function selectImg(imgSrc){
+		console.log(imgSrc);	//삭제
+		start = imgSrc.indexOf("image");
+		end = imgSrc.length;
+		imgName = imgSrc.substr(start, end);
+		console.log('name->'+imgName);	//삭제
+	}
+	
+	
+	
+</script>
+</head>
+<body onload="setImg()">
+<div id="main">
+<div id="imgList"><!-- <img src="../../img/n1.jfif" onclick="selectImg(this.src)"/> --></div>
+</div>
+</body>
+</html>

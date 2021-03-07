@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var n = 1;
+	function countNumber(){
+		document.getElementById("cnt").innerHTML = n;
+		n++;
+		console.log(n);
+		//1초에 한 번 함수 호출
+		var timer = setTimeout("countNumber()", 1000);
+		if(n>=10){
+			//재귀함수 호출 종료
+			clearTimeout(timer);
+		}
+	}
+</script>
+</head>
+<body onload="countNumber();">
+<div>
+	<h1>setTimeout() : 재귀 호출 방식으로 일정한 간격마다 반복 실행(자신의 함수를 호출하는 것)</h1>
+	<b id="cnt">1</b>
+</div>
+</body>
+</html>

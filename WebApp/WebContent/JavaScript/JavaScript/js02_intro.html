@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="txt">스타일시트를 자바스크립트에서 적용하기</h1>
+<img src="../img/d1.jfif" id="img"/>
+<div id="view"></div>
+</body>
+
+
+</html>
+<script>
+	//자바스크립트는 변수 선언시 별도의 데이터형을 지정하지 않음
+	//처음 대입되는 데이터에 따라 데이터형이 자동으로 설정됨(유동적임)
+	var imgTag="";
+	for(var i=1; i<=5; i++){
+		imgTag += "<img src='../img/d"+i+".jfif'/>";
+		
+	}
+	//html에서 정의된 id는 자바스크립트에서 변수로 사용 가능
+	//								   변수
+	document.getElementById("view").innerHTML = imgTag;	//document에 있는 id 얻어오기
+	
+	//자바스크립트에서 스타일시트 적용하기
+	document.getElementById("txt").style.color="#5ae";
+	
+	var obj = document.getElementById("txt");
+	obj.style.backgroundColor = "pink";
+	obj.style.border = "solid 2px green"
+	//ex)background-color, font-size -> 자바에서의 변수명명규칙 적용
+	
+	//자바스크립트에서 html 속성 다루기
+	var imgObj = document.getElementById("img");
+	imgObj.src = '../img/d5.jfif';	//
+	imgObj.title = '풍선도움말~!~~!!~~!!!~!~!!~!!';
+	
+	var imgFilename = imgObj.src;
+	document.write("<br/>"+imgFilename);	//이미지파일 이름 알아내기
+	
+	console.log(imgFilename);	//웹브라우저의 콘솔화면에 띄우기(F12-Console)
+	alert(imgFilename);		//alert : 대화상자 띄우기
+	
+	
+</script>

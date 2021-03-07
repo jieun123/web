@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구글맵</title>
+<style>
+
+</style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYPrJtPT3ZbtWCRBJDGSzbcRgORfEoz90&callback=initMap"></script>
+</head>
+<body>
+<div id="gMap"></div>
+<script>	/* #gMap이 생성된 후 진행될 function ,, script tag 위치는 상관없는지 알아보기 */
+	document.getElementById("gMap").style.height = window.innerHeight+"px";
+	//서울 기준 위도, 경도
+	var latitude = 37.5729503;
+	var longitude = 126.9793578;
+	var arrLatitude = [37.5768303, 37.5777103, 37.5783533, 37.565593, 37.5747403];
+	var arrLongitude = [126.9776538, 126.9735678, 126.9793571, 126.97199238, 126.9745478];
+	function initMap(){
+		//위도, 경도를 이용한 위치 객체 생성
+		var myCenter = new google.maps.LatLng(latitude, longitude);
+		
+		var mapProperty = {								//json 형식의 데이터로 생성(key, value) (google api에서 정해진 key 변수명만 사용가능(임의생성x))
+			center : myCenter,
+			zoom : 14,									//0~21까지의 값 사용(숫자가 클수록 확대)
+			mapTypeId : google.maps.MapTypeId.ROADMAP	//지도 종류(ROADMAP, HYBRID, STEELITE, TERRAIN)
+		};
+		
+		//지도 객체 생성					지도를 표시할 곳						,,,?
+		var map = new google.maps.Map(document.getElementById("gMap"), mapProperty);
+		
+		//마커 표시
+		var marker = new google.maps.Marker({
+			position : myCenter,			//마커 표시 위치
+			map : map,						//마커를 표시할 지도 객체
+			title : '서울시청',				//마커의 풍선도움말	
+			icon : '../img/gmap_pin.png'	//마커 이미지
+		});
+		/* Map() 객체처럼 var mapProperty 변수를 선언하여 넣거나
+		   Marker() 객체처럼 변수 선언없이 괄호안에 바로 데이터 입력 가능 */
+		marker.setMap(map);
+		
+		//마커 클릭시 정보 대화상자 띄우기
+		//대화상자 내용 만들기
+		var information = "위도:"+latitude+"<br/>경도:"+longitude+"<br/>서울시청<br/>";
+			information += "<a href='https://www.seoul.go.kr'><img src='../img/img1.png' width='80' height='50'/></a>"
+		
+		var info = new google.maps.InfoWindow({content:information});
+		
+		//이벤트 등록					  클릭대상   이벤트종류	  클릭시 호출 함수			지도객체, 마커객체
+		google.maps.event.addListener(marker, 'mouseover', function(){info.open(map, marker)});
+		//이벤트종류는 'on'을 제외하고 기입 (ex. click, mouseover..)
+		
+		for(var i=0; i<arrLatitude.length; i++){
+			var mk = new google.maps.Marker({
+				position : new google.maps.LatLng(arrLatitude[i], arrLongitude[i]),
+				map : map,
+				title : "위도:" + arrLatitude[i]+", 경도:"+arrLongitude[i]
+			});
+			mk.setMap(map);
+		}
+		
+		//반경 표시하기
+		var myCity = new google.maps.Circle({
+			center : myCenter		//반경을 표시할 기준 위치
+			,radius : 500			//반경 범위(m 단위)
+			,strokeColor : '#f00'	//선의 색상
+			,strokeOpacity : 0.7	//선의 투명도(0~1 사이의 값)
+			,strokeWidth : 5		//선의 두께(px 단위)
+			,fillColor : '#0f0'		//배경색
+			,fillOpacity : 0.5		//배경의 투명도			
+		});
+		myCity.setMap(map);			//변수 map에 반경 적용
+	}
+</script>
+</body>
+</html>
+<!--
+	인증키 뒤에 " &callback=initMap(함수명) " 입력,, 이때 입력한 함수명이 호출되어 자동 실행됨 (함수명 괄호 빼고 입력)
+	callback : 구글맵이 사용하는 변수,,?
+-->

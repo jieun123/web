@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{margin:0 auto;}
+	#top{
+		width:700px;
+		height:110px;
+		border:1px solid gray;
+		text-align:center;
+	}
+	#top>div{
+		width:656px;
+		height:80px;
+		margin:0 auto;
+		background:lightblue;
+	}
+	#top img{
+		width:80px;
+		height:80px;
+		float:left;
+		border:0.5px solid gray;
+	}
+	#center{
+		width:700px;
+		border:1px solid gray;
+		border-top-width:0;
+	}
+	#txt{
+		text-align:center;
+		display:none;
+		color:yellow;
+	}
+	body>div:nth-child(2){background:yellow;}
+	#wing{
+		width:150px;
+		margin:0;
+		display:none;
+	}
+</style>
+<script>
+	var selectImg;
+	var a = 0;	//setInterval() 1회 실행 위한 변수
+	function setScreenSave(inputTag){
+		selectImg = document.getElementById(inputTag).style;
+		
+		selectImg.width="100vw";
+		selectImg.height="100vh";
+		selectImg.position="absolute";
+		selectImg.left="0";
+		selectImg.top="0";
+		
+		document.getElementById("body").style.overflow="hidden";
+		
+		document.getElementById("wing").style.display="block";
+		document.getElementById("wing").style.position="absolute";
+		document.getElementById("wing").style.zIndex="100";
+		
+		document.getElementById("txt").style.display="block";
+		document.getElementById("txt").style.position="relative";
+		document.getElementById("txt").style.zIndex="50";
+		
+		if (a == 0) {
+			setInterval("wingMove()", 10);
+			a++;
+		}
+	}
+ 	var x=0;
+ 	var y=0;
+	var moveX = 5;
+	var moveY = 5;
+	var innerW = window.innerWidth;
+	var innerH = window.innerHeight;
+	
+	function wingMove(){
+		var move = document.getElementById("wing").style;
+		if(x<0){moveX = -moveX;}
+		if(x>innerW-130){moveX = -moveX;}
+		if(y<0){moveY = -moveY;}
+		if(y>innerH-65){moveY = -moveY;}
+		x = x + moveX;
+		y = y + moveY;
+		move.left = x+"px";
+		move.top = y+"px";		
+	}
+	
+  	function closeScreenSave(){
+		selectImg.width="80px";
+		selectImg.height="80px";
+		selectImg.position="inherit";
+		
+		document.getElementById("wing").style.display="none";
+		document.getElementById("txt").style.display="none";	
+	}
+</script>
+</head>
+<body id="body" onkeyup="closeScreenSave()">
+<div id="txt">아무거나 누르시면 화면보호기가 종료됩니다.</div>
+
+<div><img src="../../img/wingani.gif" id="wing"/></div>
+
+<div id="top">
+	이미지를 클릭하시면 화면보호기가 실행됩니다.
+	<div>
+		<img src="../../img/n1.jfif" id="img1" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n2.jfif" id="img2" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n3.jfif" id="img3" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n4.jfif" id="img4" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n5.jfif" id="img5" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n6.jfif" id="img6" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n7.jfif" id="img7" onclick="setScreenSave(this.id)"/>
+		<img src="../../img/n8.jfif" id="img8" onclick="setScreenSave(this.id)"/>	
+	</div>
+</div>
+<div id="center"><img src="../../img/icon.png"/><img src="../../img/icon.png"/></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	*{margin:0;}
+	body{padding:0;margin:0;}
+	body div{margin:0 auto;}
+	#line{border:1px solid blue;}
+	
+	#top>div{width:800px;height:200px;}
+	#top>div:first-child{height:100px;background:lightblue;}
+	#top>div:last-child{height:100px;background:pink;}
+	
+	#center{position:absolute;margin:0 auto;width:100%;}
+	#center>div{width:1000px;}
+	#left{width:100px;height:300px;background:yellow;float:left;}
+	#right{width:100px;height:400px;background:orange;float:right;}
+	
+	img{width:800px}
+	#imgLst{width:800px;margin:0 auto;}
+</style>
+<script>
+	function fixedTop(){
+		var scrollY = window.scrollY;
+		if(scrollY>=208){
+  			document.getElementById("center").style.position='fixed';
+			document.getElementById("center").style.top='0';
+		}else{
+			document.getElementById("center").style.position='absolute';
+			document.getElementById("center").style.top='200px';
+		}
+	}
+</script>
+<body onload="setInterval('fixedTop()', 50);">
+<div>
+	<div id="banner">
+		<div id="top">	<!-- 상단 -->
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
+	<div id="center">
+		<hr id="line"/>
+		<div>
+			<div id="left">aa</div>	<!-- 센터 왼쪽 배너 -->
+			<div id="right">bbb</div>	<!-- 센터 오른쪽 배너 -->
+		</div>
+	</div>
+		
+	<div id="imgLst">
+		<img src="../../img/d1.jfif"><br/>		<!-- 센터 컨텐츠 -->
+		<img src="../../img/d2.jfif"><br/>
+		<img src="../../img/d3.jfif"><br/>
+		<img src="../../img/d5.jfif"><br/>
+		<img src="../../img/d6.jfif">
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#main{
+		width:500px;
+		margin:0 auto;
+		background:lightblue;
+	}
+	#imgList>img{
+		width:100px;
+		height:100px;
+		float:left;
+	}
+	#popup{
+		width:300px;
+		height:300px;
+		border:1px solid black;
+		position:absolute;
+		display:none;
+	}
+	#imgName{
+		height:30px;
+		text-align:center;
+		line-height:30px;
+		background:#eee;
+	}
+	#selImg{
+		height:270px;
+		background:lightblue;
+	}
+	#bg{
+		display:none;
+		position:fixed;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background-color:rgba(0,0,0,0.5);
+	}
+</style>
+<script>
+	var image = ['image01.jfif', 'image02.jfif', 'image03.jfif', 'image04.gif', 'image05.jfif', 'image06.gif', 'image07.jfif',
+			'image08.jfif', 'image09.jfif', 'image10.gif', 'image11.jfif', 'image12.jfif', 'image13.jfif', 'image14.jfif', 'image15.jfif'];
+	var tag="";
+ 	function setImg(){
+ 		for(var i=1; i<=4; i++){
+			for(var j=0; j<image.length; j++){
+				tag += "<img src='img/"+image[j]+"' onclick='selectImg(this.src)'/>";
+			}
+		document.getElementById("imgList").innerHTML = tag;
+ 		}
+	}
+	//이미지 클릭시 팝업
+ 	var eventX, eventY, divX, divY, moveX, moveY, flag=false;
+	var start, end, imgName, imgSrc;
+	function selectImg(imgSrc){
+		//이벤트 발생한 곳의 좌표 구하기
+		eventX = event.clientX;
+		eventY = event.clientY;
+		console.log('x->',eventX,', y->',eventY)	//삭제
+		//팝업 띄우기
+		popup = document.getElementById("popup").style
+		popup.display = "block";
+		popup.left = (eventX-150)+"px";
+		popup.top = eventY+"px";
+		
+		//이벤트 발생한 이미지 파일명 가져오기
+		start = imgSrc.indexOf("image");
+		end = imgSrc.length;
+		imgName = imgSrc.substr(start, end);
+		
+		document.getElementById("imgName").innerHTML = imgName;
+		
+		document.getElementById("selImg").style.backgroundImage = "url("+imgSrc+")";
+		document.getElementById("selImg").style.backgroundSize = "100% 100%";
+		
+		document.getElementById("popup").style.zIndex = "100";	//상위에 뜨도록 설정
+		
+		document.getElementById("bg").style.display = "block";
+	}
+	
+	//팝업 이동
+ 	function setMoveStart(){
+		flag=true;
+		//클릭 이벤트 발생 좌표 구하기
+		eventX = event.clientX;
+		eventY = event.clientY;
+
+		//팝업창 좌표구하기
+		divX = parseInt(popup.left);
+		divY = parseInt(popup.top);
+		
+		document.onmousemove = setMouseDrag;
+	}
+ 	function setMouseDrag(){
+		if(flag){
+			moveX = event.clientX;	//onmousemove 이벤트 발생 좌표 구하기
+			moveY = event.clientY;
+			console.log('moveX->',moveX,', moveY->',moveY)//삭제
+			
+			//이동거리 구하기 = 나중에 발생한 이벤트 좌표 - 이전에 발생한 이벤트 좌표
+			var x = moveX - eventX;
+			var y = moveY - eventY;
+			
+			popup.left = divX + x + "px";	//팝업창 좌표에서 드래그한만큼 이동
+			popup.top = divY + y + "px";
+		}
+	}
+ 	//드래그 하다 마우스 놓으면 팝업창 움직임 멈추기
+	function setFlag(){
+		flag = false;
+	}
+	document.onmouseup = setFlag;
+	
+	//팝업 해제, 모달 해제
+	function closePopup(){
+		document.getElementById("popup").style.display = "none"
+		document.getElementById("bg").style.display = "none";
+	}	
+</script>
+</head>
+<body onload="setImg()">
+<div id="main">
+	<div id="imgList"></div>
+	<div id="popup" onmousedown="setMoveStart()">
+		<div id="imgName"></div>
+		<div id="selImg"></div>
+	</div>
+	<div id="bg" onclick="closePopup()"></div>
+</div>
+</body>
+</html>

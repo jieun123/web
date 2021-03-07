@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#main{
+		width:500px;
+		margin:0 auto;
+		background:lightblue;
+	}
+	#imgList>img{
+		width:100px;
+		height:100px;
+		float:left;
+	}
+	#popup{
+		width:300px;
+		height:300px;
+		border:1px solid black;
+		position:absolute;
+		display:none;
+	}
+	#imgName{
+		height:30px;
+		text-align:center;
+		line-height:30px;
+		background:#eee;
+	}
+	#selImg{
+		height:270px;
+		background:lightblue;
+	}
+	#bg{
+		display:none;
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background:#ccc;
+		/* opacity:0.5; */
+	}
+	
+	
+</style>
+<script>
+	var image = ['image01.jfif', 'image02.jfif', 'image03.jfif', 'image04.gif', 'image05.jfif', 'image06.gif', 'image07.jfif',
+			'image08.jfif', 'image09.jfif', 'image10.gif', 'image11.jfif', 'image12.jfif', 'image13.jfif', 'image14.jfif', 'image15.jfif'];
+	var tag="";
+ 	function setImg(){
+ 		for(var i=1; i<=4; i++){
+			for(var j=0; j<image.length; j++){
+				tag += "<img src='img/"+image[j]+"' onclick='selectImg(this.src)' onmouseDown='setMouseDrag()'/>";
+			}
+		document.getElementById("imgList").innerHTML = tag;
+ 		}
+	}
+
+ 	var eventX, eventY, divX, divY, moveX, moveY, flag=false;
+	var start, end, imgName, imgSrc;
+	function selectImg(imgSrc){
+		//이벤트 발생한 곳의 좌표 구하기
+		eventX = event.clientX;
+		eventY = event.clientY;
+		console.log('x->',eventX,', y->',eventY)	//삭제
+		//팝업 띄우기
+		popup = document.getElementById("popup").style
+		popup.display = "block";
+		popup.left = (eventX-150)+"px";
+		popup.top = eventY+"px";
+		
+		//이벤트 발생한 이미지 파일명 가져오기
+		start = imgSrc.indexOf("image");
+		end = imgSrc.length;
+		imgName = imgSrc.substr(start, end);
+		
+		document.getElementById("popup").style.zIndex = "100";
+		
+		document.getElementById("imgName").innerHTML = imgName;
+		
+		document.getElementById("selImg").style.backgroundImage = "url("+imgSrc+")";
+		document.getElementById("selImg").style.backgroundSize = "100% 100%";
+		
+		//배경 투명도 처리
+		var scH = document.body.scrollHeight;
+		console.log("스크롤높이->",scH);		
+		var oH = window.outerHeight;
+		console.log("아우터높이->",oH);		
+		var wH = window.innerHeight;
+		console.log("윈도우이너높이->",wH);		
+		var sH = screen.height;
+		console.log("스크린높이->",sH);		
+		var h = document.body.pageHeight;
+		console.log("바디높이->",h);
+		document.getElementById("bg").style.display = "block";
+		document.getElementById("bg").style.opcity = "0.5";
+		document.getElementById("bg").style.height = scH;
+		
+	}
+	
+	//팝업 이동
+ 	function setMoveStart(){
+		flag=true;
+		//팝업 좌표구하기
+		divX = parseInt(popup.left);
+		divY = parseInt(popup.top);
+		
+		document.onmousemove = setMouseDrag;
+	}
+	
+ 	function setMouseDrag(){
+		if(flag){
+			moveX = event.clientX;
+			moveY = event.clientY;
+			
+			var x = moveX - eventX;
+			var y = moveY - eventY;
+			
+			popup.left = eventX + x + "px";
+			popup.top = eventY + y + "px";
+		}
+	}
+	function setFlag(){	//마우스를 놓으면 팝업창 움직임 멈추기
+		flag = false;
+	}
+	document.onmouseup = setFlag;
+</script>
+</head>
+<body onload="setImg()">
+<div id="main">
+	<div id="imgList"></div>
+	<div id="popup">
+		<div id="imgName"></div>
+		<div id="selImg"></div>
+	</div>
+	<div id="bg"></div>
+</div>
+</body>
+</html>
